@@ -1,3 +1,7 @@
-.red{
-    color: red;
+.card{
+    width: 18rem;
+    height: 10rem;;
+    margin:10px;
+    text-align: center;
+    box-shadow: 8px 8px 14px 0px rgba(0,0,0,0.37);
 }
