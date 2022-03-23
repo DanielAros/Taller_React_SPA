@@ -1,23 +1,21 @@
 import { useState } from "react";
 import {Card, Button} from 'react-bootstrap';
 import styles from "./Pokemon.module.css"
+import TypeTag from "./TypeTag";
 
-function Pokemon(props){
-
-    const [pokemon, setPokemon] = useState(props);
-    
+function Pokemon(props){    
+    // console.log(props.type);
     return (
-        <Card className={`${styles.card}`}>
-            <Card.Body>
-                <Card.Title>Pokemon</Card.Title>
-                <Card.Text>
-                    <b>Name:</b> {props.name}
-                </Card.Text>
-                <Card.Text>
-                    <b>Base experience:</b> {props.base_experience}
-                </Card.Text>
-            </Card.Body>
-        </Card>
+        <div className={`${styles.card}`}>
+            <img src={props.url} style={{width: '96px'}}/>
+            <h4>{props.name}</h4>
+            <b>Type:</b>
+            <div className={`${styles.containerTags}`}>
+                {
+                    props.type.map( t => <TypeTag type={t.type.name}/>)
+                }
+            </div>
+        </div>
     );
 }
 

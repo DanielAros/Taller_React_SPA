@@ -6,7 +6,9 @@ header{
     text-align: center;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
+    padding: 20px;
+    box-sizing: border-box;
 }
 .container{
     display: flex;
@@ -19,4 +21,22 @@ header{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+}
+
+.search{
+    width: 500px;
+    /* position: absolute; */
+    padding: 5px;
+    background-color: rebeccapurple;
+}
+
+input{
+    width: 240px;
+    height: 40px;
+    border-radius: 18px;
+    padding: 0px 20px;
+    font-size: 18px;
+    color: #000;
+    outline: none;
+    border: 1px solid silver;
 }

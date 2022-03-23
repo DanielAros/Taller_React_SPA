@@ -1,7 +1,28 @@
 .card{
     width: 18rem;
-    height: 10rem;;
+    height: 16rem;
     margin:10px;
     text-align: center;
     box-shadow: 8px 8px 14px 0px rgba(0,0,0,0.37);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10px;
+}
+
+    .card:hover{
+        cursor: pointer;
+        background-color: rgba(44, 166, 214, 0.377);
+        border: 1px solid silver;
+        padding: 10px;
+    }
+
+.containerTags{
+    width: 80%;
+    display: flex;
+    justify-content: space-around;
+    font-size: 14px;
+    font-weight: 500;
+    flex-wrap: wrap;
+    margin-top: 10px;
 }

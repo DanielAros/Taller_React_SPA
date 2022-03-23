@@ -1,0 +1,13 @@
+.container{
+    width: 100%,
+}
+
+.tag{
+    width: 60px;
+    background-color: rebeccapurple;
+    text-align: center;
+    padding: 5px;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    color: white;
+}
