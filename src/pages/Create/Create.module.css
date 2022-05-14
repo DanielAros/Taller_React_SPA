@@ -1,0 +1,32 @@
+.container{
+    width: 100%;
+    height: calc(100vh - 80px);
+    display: flex;
+}
+
+.containerLeft{
+    width: 30%;
+    /* background-color: rgb(255, 0, 55); */
+    background-color: #d30a40;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.containerRigth{
+    width: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.containerForm{
+    width: 80%;
+    height: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: 8px 8px 14px 0px rgba(0,0,0,0.37);
+}

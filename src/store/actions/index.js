@@ -37,6 +37,13 @@ export const setRemovedPokemon = (id) => {
     });
 }
 
+export const createPokemon = (pokemon) => {
+    return async (dispatch) => {
+        const {data} = await add(pokemon);
+        dispatch(addPokemon(data))
+    }
+}
+
 export const addNewPokemon = (pokemon) => {
     return async (dispatch) => {
         const {data} = await add(pokemon);

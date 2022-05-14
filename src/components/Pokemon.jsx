@@ -19,26 +19,20 @@ function Pokemon({ pokemon }){
 
     return (
         <div className={`${styles.card}`}>
-            <img src={pokemon.sprite} style={{width: '96px'}}/>
+            <img src={pokemon.sprite} style={{width: '96px', height: '96px', marginTop: '20px'}}/>
             <h4>{pokemon.name}</h4>
             <p><b>Base Experience: </b> {`${pokemon.base_experience}`}</p>
             <p><b>Height: </b> {`${pokemon.height}`}</p>
             <p><b>Weight: </b> {`${pokemon.weight}`}</p>
-            {/* <b>Type:</b> */}
-            {/* <div className={`${styles.containerTags}`}>
-                {
-                    props.type.map( t => <TypeTag type={t.type.name}/>)
-                }
-            </div> */}
             <div>
-                <Button variant="danger" onClick={deletePokemon} className={`${styles.buttons}`}>
+                <button onClick={deletePokemon} className={`${styles.eliminar}`}>
                     Eliminar
-                </Button>
-                <Button className={`${styles.buttons}`}>
+                </button>
+                <button className={`${styles.actualizar}`}>
                     <NavLink to={`/actualizar/${pokemon.id}`} className={`${styles.navLink}`} style={{color: 'white'}}>
                         Actualizar
                     </NavLink>
-                </Button>
+                </button>
             </div>
         </div>
     );

@@ -4,7 +4,8 @@ import axios from "../../utils/axios";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { addPokemon } from "../../store/actions";
+import { createPokemon } from "../../store/actions";
+import styles from "./Create.module.css"
 
 const Create = () => {
     const dispatch = useDispatch();
@@ -21,7 +22,7 @@ const Create = () => {
         try {
             e.preventDefault();
         //   await axios.post("/pokemons", formData);
-            dispatch(addPokemon(formData))
+            dispatch(createPokemon(formData))
             navigate("/");
         } catch (err) {
           console.log(err);
@@ -30,20 +31,20 @@ const Create = () => {
 
 
     return(
-        <Container>
-            <h1 className="white-text m-4 text-center">Crear nuevo pokemon</h1>
-            <Row className={"justify-content-center"}>
-                <Col xs={6}>
-                <Card className="p-4">
+        <div className={`${styles.container}`}>
+            <div className={`${styles.containerLeft}`}>
+                <h1>Crear pokemon</h1>
+            </div>
+            <div className={`${styles.containerRigth}`}>
+                <div className={`${styles.containerForm}`}>
                     <Form
-                    handleSubmit={handleSubmit}
-                    formData={formData}
-                    setFormData={setFormData}
+                        handleSubmit={handleSubmit}
+                        formData={formData}
+                        setFormData={setFormData}
                     />
-                </Card>
-                </Col>
-            </Row>
-        </Container>
+                </div>
+            </div>
+        </div>
     )
 }
 

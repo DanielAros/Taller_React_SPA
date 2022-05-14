@@ -1,16 +1,14 @@
 import '../../App.css';
 import Pokemon from '../../components/Pokemon';
-import { useEffect, useState, useCallback} from 'react';
+import { useEffect} from 'react';
 import styles from "../../components/App.module.css"
-import axios from '../../utils/axios';
 import { useSelector, useDispatch } from "react-redux";
 import {fetchPokemons} from "../../store/actions/index"
 
 
 function Dashboard() {
   const dispatch = useDispatch();
-  // const [pokemons, setPokemons] = useState([]);
-  // const [backUpPokemons, setBackupPokemons] = useState([]);
+  
   const {list:pokemons} = useSelector((state) => state.pokemons);
   console.log(pokemons);
   
@@ -22,19 +20,6 @@ function Dashboard() {
     }
   }, [dispatch]);
   
-  // const searchTypePokemon = (event) => {
-  //   let pokemonArray = [...backUpPokemon];
-  //   pokemonArray = pokemonArray.filter( (pokemon) => {
-  //     for(let i = 0; i < pokemon.types.length; i++){
-  //       if(pokemon.types[i].type.name.toLowerCase().search(event.target.value.toLowerCase()) !== -1){
-  //         return pokemon;
-  //       }
-  //     }
-  //   });
-
-  //   setPokemon(pokemonArray);
-  // }
-
   const debaunce = (callback, wait) => {
     let timer;
     return (...args) => {
@@ -49,6 +34,7 @@ function Dashboard() {
     <div className={`${styles.container}`}>
       <form>
         <input 
+          className={`${styles.inputSearch}`}
           type="text" 
           placeholder='Ingrese el nombre del pokemon'
           name='name'

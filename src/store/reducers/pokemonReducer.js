@@ -25,7 +25,7 @@ const reducer = (state = initialState, {type, payload}) => {
         case ActionTypes.ADD_POKEMON:
             return {
                 ...state, 
-                list: [...state.list, { ...payload }],
+                list: [...state.list, payload ],
             }    
         default:
             return state;

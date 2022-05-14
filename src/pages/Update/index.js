@@ -1,10 +1,9 @@
 import { useParams, useNavigate } from "react-router-dom";
-import { Card, Container, Row, Col } from "react-bootstrap";
 import Form from "../../components/Form";
 import { useEffect, useState } from "react";
-import axios from "../../utils/axios";
 import { useDispatch, useSelector } from "react-redux";
 import {fetchPokemon, updatePokemon} from "../../store/actions/index"
+import styles from "./Update.module.css"
 
 const Update = () => {
     const dispatch = useDispatch();
@@ -33,7 +32,6 @@ const Update = () => {
     const handleSubmit = async (e) => {
         try {
             e.preventDefault();
-            // await axios.put(`/pokemons/${id}`, formData);
             navigate("/");
             dispatch(updatePokemon(id, formData));
             } catch (err) {
@@ -41,20 +39,20 @@ const Update = () => {
         }
     };
     return(
-        <Container>
-            <h1 className="white-text m-4 text-center">Editar pokemon</h1>
-            <Row className={"justify-content-center"}>
-                <Col xs={6}>
-                <Card className="p-4">
+        <div className={`${styles.container}`}>
+            <div className={`${styles.containerLeft}`}>
+                <h1>Editar pokemon</h1>
+            </div>
+            <div className={`${styles.containerRigth}`}>
+                <div className={`${styles.containerForm}`}>
                     <Form
                         handleSubmit={handleSubmit}
                         formData={formData}
                         setFormData={setFormData}
                     />
-                </Card>
-                </Col>
-            </Row>
-        </Container>
+                </div>
+            </div>
+        </div>
     );
 }
 
